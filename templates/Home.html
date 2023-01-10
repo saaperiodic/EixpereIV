@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pereiv.css' %}">
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    {% endblock %}
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Eix Pere IV</title>
+    {% endblock %}
+  </head>
+  <nav id="nav">
+      <a href="{% url 'home' %}">
+          <img src="{% static 'img/logo-pereiv.png' %}" class="logo">
+      </a>
+      <ul>
+          <li>
+              <a href='#footer'>
+                  SOBRE NOSALTRES
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  ENTITATS
+              </a>
+          </li>
+          <li id="dropdown">
+              <a href="#">
+                  CATEGORIES
+              </a>
+              <div class="categories">
+                  <a href='#'>Esports</a>
+                  <a href='#'>Events Culturals</a>
+                  <a href='#'>Bricolatge</a>
+                  <a href='#'>Altres</a>
+              </div>
+          </li>
+          <li>
+              <a href="#">
+                  PARTICIPA
+              </a>
+          </li>
+      </ul>
+  </nav>
+  <div class="flexbox">
+      {% block header %}
+      <header>
+        <div class="header_background" id="header">
+          <div class="center">
+            <h1>Benvinguts al Eix Pere IV</h1>
+            <p>Deslliça per a més informació!</p>
+          </div>
+        </div>
+      </header>
+      {% endblock %}
+      <body style="background: -webkit-linear-gradient(to right, #181818, #423e3e); background: linear-gradient(to right, #181818, #423e3e)">
+        {% block body %}
+        <div id="content">
+          <div id="primary">
+            <ul class="articles">
+                <li>
+                    <div>
+                        <img src='{{ last_art.img.url }}' class="article_img" alt='IMG'>
+                    </div>
+                    <div>
+                        <h3>{{ last_art.title }}</h3>
+                        <p>{{ last_art.body|linebreaks }}</p>
+                    </div>
+                    <button><a href="http://localhost:8000/art/{{ last_art.id }}">Més informació</a></button>
+              </li>
+              <li>
+                <div>
+                  <img src="{{ second_last_art.img.url }}" class="article_img" alt='IMG'>
+                </div>
+                <div>
+                  <h3>{{ second_last_art.title }}</h3>
+                  <p>{{ second_last_art.body|linebreaks }}</p>
+                </div>
+                  <button><a href="http://localhost:8000/art/{{ second_last_art.id }}">Més informació</a></button>
+              </li>
+            </ul>
+            <ul class="articles2">
+              <li>
+                <div>
+                  <img src="{{ third_last_art.img.url }}" class="article_img" alt='IMG'>
+                </div>
+                <div>
+                  <h3>{{ third_last_art.title }}</h3>
+                  <p>{{ third_last_art.body|linebreaks }}</p>
+                </div>
+                  <button><a href="http://localhost:8000/art/{{ third_last_art.id }}">Més informació</a></button>
+              </li>
+              <li>
+                <div>
+                  <img src="{{ fourth_last_art.img.url }}" class="article_img" alt='IMG'>
+                </div>
+                <div>
+                  <h3>{{ fourth_last_art.title }}</h3>
+                  <p>{{ fourth_last_art.body|linebreaks }}</p>
+                </div>
+                  <button><a href="http://localhost:8000/art/{{ fourth_last_art.id }}">Més informació</a></button>
+              </li>
+            </ul>
+          </div>
+          <div id="secondary">
+
+          </div>
+          <div id="calendar">
+            <h2>Calendari d'activitats</h2>
+            <h3 style="position: relative; text-align: center; top: 10px;">Octubre</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <span>DL</span>
+                  </th>
+                  <th scope="col">
+                    <span>DT</span>
+                  </th>
+                  <th scope="col">
+                    <span>DC</span>
+                  </th>
+                  <th scope="col">
+                    <span>DJ</span>
+                  </th>
+                  <th scope="col">
+                    <span>DV</span>
+                  </th>
+                  <th scope="col">
+                    <span>DS</span>
+                  </th>
+                  <th scope="col">
+                    <span>DG</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                    <a href="#">1</a>
+                  </td>
+                  <td>
+                    <a href="#">2</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">3</a>
+                  </td>
+                  <td>
+                    <a href="#">4</a>
+                  </td>
+                  <td>
+                    <a href="#">5</a>
+                  </td>
+                  <td>
+                    <a href="#">6</a>
+                  </td>
+                  <td>
+                    <a href="#">7</a>
+                  </td>
+                  <td class="available">
+                    <a href="#">8</a>
+                  </td>
+                  <td class="busy">
+                    <a href="#">9</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">10</a>
+                  </td>
+                  <td>
+                    <a href="#">11</a>
+                  </td>
+                  <td class="busy">
+                    <a href="#">12</a>
+                  </td>
+                  <td class="busy">
+                    <a href="#">13</a>
+                  </td>
+                  <td>
+                    <a href="#">14</a>
+                  </td>
+                  <td>
+                    <a href="#">15</a>
+                  </td>
+                  <td>
+                    <a href="#">16</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">17</a>
+                  </td>
+                  <td class="unavailable">
+                    <a href="#">18</a>
+                  </td>
+                  <td class="unavailable">
+                    <a href="#">19</a>
+                  </td>
+                  <td class="unavailable">
+                    <a href="#">20</a>
+                  </td>
+                  <td>
+                    <a href="#">21</a>
+                  </td>
+                  <td>
+                    <a href="#">22</a>
+                  </td>
+                  <td>
+                    <a href="#">23</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="#">24</a>
+                  </td>
+                  <td>
+                    <a href="#">25</a>
+                  </td>
+                  <td>
+                    <a href="#">26</a>
+                  </td>
+                  <td>
+                    <a href="#">27</a>
+                  </td>
+                  <td>
+                    <a href="#">28</a>
+                  </td>
+                  <td class="available">
+                    <a href="#">29</a>
+                  </td>
+                  <td class="available">
+                    <a href="#">30</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="available">
+                    <a href="#">31</a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <div id="leyenda">
+              <ul>
+                <li><span style="background: greenyellow;"></span>Places lliures.</li>
+                <li><span style="background: darkorange;"></span>Poques places lliures.</li>
+                <li><span style="background: red;"></span>Cap plaça lliure.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <script src="{% static 'js/main.js' %}"></script>
+        {% endblock %}
+      </body>
+      <footer id="footer">
+        <p>SOBRE NOSALTRES: Taula Eix Pere IV</p>
+        <p>Som una plataforma ciutadana formada per veïns i veïnes,
+          col·lectius i cooperatives dels barris del Poblenou aplegades amb l’objectiu d’impulsar la reactivació social,
+          cultural i econòmica de l’eix Pere IV.</p>
+        <p>La Taula organitzariem  jornades sobre urbanisme i múltiples iniciatives amb
+          entitats i projectes de l’economia social i solidària</p>
+        <a onclick='window.scrollTo({top: 0, behavior: "smooth"});'>INICI</a>
+      </footer>
+  </div>
+</html>

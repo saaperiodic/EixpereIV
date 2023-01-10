@@ -1,0 +1,14 @@
+body * {
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+p, h3 {
+    max-width: 50%;
+}
+.article_media {
+    position: relative;
+    object-fit: contain;
+    max-width: 60%;
+    margin-top: 5%;
+}
